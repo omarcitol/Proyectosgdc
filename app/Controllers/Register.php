@@ -18,4 +18,13 @@ class Register extends BaseController
     return $vistas;
 
      }
+
+    public function guardar()
+     {
+        $correo = $this->request->getPost('email');
+        $password = $this->request->getPost('password');
+        $password2 = $this->request->getPost('password2');
+
+        var_dump($password);
+     }
 }

@@ -16,10 +16,12 @@
             
 
             <div class="row">
-                <div class="col-xxl-12 col-lg-12 col-md-12 col-sm-12 pt-5 nt-5">
+                <div class="col-xxl-12 col-lg-12 col-md-12 col-sm-12 pt-5">
 
                         <div class="card text-white bg-primary">
-                       <div class="card-header text-center"><h2>LOGIN UMC</h2></div>
+                        
+                       <div class="card-header text-center"><img src="<?php echo base_url()?>/public/img/logoumc2.png" height="200" width="300 "img fluid"  alt="Imagen login">
+                       <h2>LOGIN UMC</h2></div>
     
                        <div class="card-body">
                                        

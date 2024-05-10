@@ -7,7 +7,6 @@
 
 
     <link href="<?php echo base_url()?>/public/css/bootstrapcss/bootstrap.min.css" rel="stylesheet">
-    <script src="<?php echo base_url()?>/public/js/bootstrapjs/bootstrap.bundle.min.js"></script>
 
 
 </head>
@@ -16,26 +15,26 @@
             
 
             <div class="row">
-                <div class="col-xxl-12 col-lg-12 col-md-12 col-sm-12 pt-5 nt-5">
+                <div class="col-xxl-12 col-lg-12 col-md-12 col-sm-12 pt-5">
 
                         <div class="card text-white bg-primary">
-                       <div class="card-header text-center"><h2>REGISTRO UMC</h2></div>
+                       <div class="card-header text-center"><img src="<?php echo base_url()?>/public/img/logoumc2.png" height="200" width="300 "img fluid"  alt="Imagen login"><h2>REGISTRO UMC</h2></div>
     
                        <div class="card-body">
                                        
-                <form>
+                <form method="post" action="<?php echo base_url()?>/register">
                         <div class="mb-3">
                             <label for="email">Ingresa tu correo electronico:</label>
-                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="ejemplo@gmail.com">
+                            <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="ejemplo@gmail.com" required aria-required="requiere gmail" oninvalid="this.setCustomValidity('Porfavor introduzca su gmail')" oninput="setCustomValidity('')">
                             <small class="form-text text-white">Ingresa tu correo porfavor.</small>
                         </div>
                         <div class="mb-3">
                             <label for="password">Contraseña:</label>
-                            <input type="password" class="form-control" id="password" placeholder="Contraseña">
+                            <input type="password" minlength="8" maxlength="25" class="form-control" id="password" placeholder="Contraseña" required aria-required="requiere contraseña" oninvalid="this.setCustomValidity('Porfavor introduzca su contraseña (mínimo 8 carácteres)')" oninput="setCustomValidity('')">
                         </div>
                         <div class="mb-3">
                             <label for="password">Repite tu Contraseña:</label>
-                            <input type="password" class="form-control" id="password" placeholder="Contraseña">
+                            <input type="password" minlength="8" maxlength="25" class="form-control" id="password" placeholder="Contraseña" required aria-required="requiere gmail" oninvalid="this.setCustomValidity('Porfavor repita su contraseña, (mínimo 8 carácteres)')" oninput="setCustomValidity('')">
                         </div>
                         <div class="form-check">
                             <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -52,9 +51,10 @@
 
 
 
-
-    <script src="<?php echo base_url()?>/public/js/bootstrapjs/bootstrap.min.js"></script>
-    <script src="<?php echo base_url()?>/public/js/popper.min.js" ></script>
-
+         <script src="<?php echo base_url()?>/public/js/jquery.min.js"></script>
+         <script src="<?php echo base_url()?>/public/js/bootstrapjs/bootstrap.bundle.min.js"></script>
+        <script src="<?php echo base_url()?>/public/js/bootstrapjs/bootstrap.min.js"></script>
+        <script src="<?php echo base_url()?>/public/js/popper.min.js" ></script>
+        <script src="<?php echo base_url()?>/public/js/jquery.validate.min.js"></script>
 </body>
 </html>
