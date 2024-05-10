@@ -9,7 +9,6 @@ class iniciocontrolador extends BaseController
 	   $vistas =  view('minicio/menu').
 				  view('minicio/cabecera').
 				  view('minicio/inicio').
-				  view('minicio/login').
 				  view('minicio/pie');
 
 		 return $vistas; 
@@ -25,17 +24,6 @@ class iniciocontrolador extends BaseController
 
 		 return $vistas;
  }
-	
- 	public function login(){
-
-		$vistas = view('login/menu').
-			 	  view('login/cabecera'). 
-			  	  view('login/inicio'). 
-			  	  view('login/contenido'). 
-			  	  view('login/pie'); 
-
-	 	return $vistas;
-}
 
 	public function contacto(){
 
