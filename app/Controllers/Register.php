@@ -25,6 +25,6 @@ class Register extends BaseController
         $password = $this->request->getPost('password');
         $password2 = $this->request->getPost('password2');
 
-        var_dump($password);
+        var_dump($password2,$password,$correo);
      }
 }

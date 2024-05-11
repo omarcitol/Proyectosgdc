@@ -1,0 +1,245 @@
+borrador register donde salen los required
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse</title>
+
+
+    <link href="<?php echo base_url()?>/public/css/bootstrapcss/bootstrap.min.css" rel="stylesheet">
+
+
+</head>
+<body class="m-0 vh-100 row justify-content-center align-item-center">
+
+            
+
+            <div class="row">
+                <div class="col-xxl-12 col-lg-12 col-md-12 col-sm-12 pt-5">
+
+                        <div class="card text-white bg-primary">
+                       <div class="card-header text-center"><img src="<?php echo base_url()?>/public/img/logoumc2.png" height="200" width="300 "img fluid"  alt="Imagen login"><h2>REGISTRO UMC</h2></div>
+    
+                       <div class="card-body">                                 
+                <form id= "form-register" method="post" action="">
+                        <div class="mb-3">
+                            <label for="email">Ingresa tu correo electronico:</label>
+                            <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="ejemplo@gmail.com" required aria-required="requiere gmail" oninvalid="this.setCustomValidity('Porfavor introduzca su gmail')" oninput="setCustomValidity('')">
+                            <small class="form-text text-white">Ingresa tu correo porfavor.</small>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password1" class="form-label">Contraseña :</label>
+                            <input type="password" minlength="8" maxlength="25" class="form-control" id="password1" name="password" placeholder="Contraseña" required aria-required="requiere contraseña" oninvalid="this.setCustomValidity('Porfavor introduzca su contraseña (mínimo 8 carácteres)')" oninput="setCustomValidity('')">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password2" class="form-label">Repite tu Contraseña :</label>
+                            <input type="password" minlength="8" maxlength="25" class="form-control" id="password2" name="password2" placeholder="Contraseña" required aria-required="requiere contraseña" oninvalid="this.setCustomValidity('Porfavor repita su contraseña, (mínimo 8 carácteres)')" oninput="setCustomValidity('')">
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Guardar sesión</label>
+                        </div>
+                        <button type="submit" class="btn btn-dark">Registrarse</button>
+                        <a href="<?php echo base_url()?>/login" class="btn btn-dark">Ingresar</button>
+
+                    </form>
+                        
+                </div>        
+            </div>
+         </div>
+
+
+
+         <script src="<?php echo base_url()?>/public/js/jquery.min.js"></script>
+         <script src="<?php echo base_url()?>/public/js/bootstrapjs/bootstrap.bundle.min.js"></script>
+        <script src="<?php echo base_url()?>/public/js/bootstrapjs/bootstrap.min.js"></script>
+        <script src="<?php echo base_url()?>/public/js/popper.min.js" ></script>
+        <script src="<?php echo base_url()?>/public/js/jquery.validate.min.js"></script>
+        <script src="<?php echo base_url()?>/public/js/register.js"></script>
+
+</body>
+</html>
+
+
+///////////////////////////fin//////////////////////////////////////////////////
+
+
+
+Validation >>
+
+$(document).ready(function () {
+
+//inicio de registrar usuario
+
+$(".form-register").click(function () {
+    validator();
+});
+
+var validator = function () {
+
+    $("#form-register").validate({
+
+        rules: {
+            "username": {
+                required: true,
+                minlength: 8,
+                maxlength: 25,
+            },
+
+            "email": {
+                required: true,
+                minlength: 5,
+            },
+
+            "password": {
+                required: true,
+                minlength: 7,
+                maxlength: 25,
+            },
+
+            "password2": {
+                required: true,
+                equalTo: "#password",
+            }
+        },
+
+        messages: {
+
+            "email": {
+                required: "<b style='color:#F93810'>Por favor ingresa un correo electrónico válido.</b>",
+            },
+
+            "password": {
+                required: "<b style='color:#5A6268'>Por favor ingresa una contraseña válida.</b>",
+                minlength: "<b style='color:#5A6268'>Debe tener mínimo 8 caracteres.</b>",
+                maxlength: "<b style='color:#5A6268'>Máximo 25 caracteres.</b>",
+            },
+
+            "password2": {
+                required: "<b style='color:#5A6268'>Por favor repita su contraseña.</b>",
+                minlength: "<b style='color:#5A6268'>Debe tener mínimo 8 caracteres.</b>",
+                equalTo: "<b style='color:#5A6268'>Las contraseñas no son iguales.</b>",
+            }
+        },
+
+        ignore: [],
+        errorClass: "invalid-feedback animated fadeInUp",
+        errorElement: "div",
+        errorPlacement: function (error, element) {
+            $(element).closest(".mb-3").append(error);
+        },
+        highlight: function (element) {
+            $(element).closest(".mb-3").removeClass("is-invalid").addClass("is-invalid");
+        },
+        success: function (error) {
+            $(error).closest(".mb-3").removeClass("is-invalid");
+            $(error).remove();
+        },
+        submitHandler: function (form, event) {
+
+            event.preventDefault();
+            var formData = new FormData($("#form-register")[0]);
+
+            $.ajax({
+                // url : base_url + '/crear cuenta',
+                // type : 'POST',
+                // data : formData,
+                // dataType : 'JSON',
+                // cache : false,
+                // contentType : false,
+                // processData : false,
+                // beforeSend : function(data) {
+                //     $('#page-loader').fadeIn('fast');
+                // },
+
+                // success : function(data) {
+                //     $('#page-loader').fadeOut('fast');
+                // },
+
+            });
+            //fin ajax.
+        }
+
+    });
+};
+
+});
+
+
+//////////////////////FORMULARIO REGISTRO ORIGINAL/////////////////////
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse</title>
+
+
+    <link href="<?php echo base_url()?>/public/css/bootstrapcss/bootstrap.min.css" rel="stylesheet">
+
+
+</head>
+<body class="m-0 vh-100 row justify-content-center align-item-center">
+
+            
+
+            <div class="row">
+                <div class="col-xxl-12 col-lg-12 col-md-12 col-sm-12 pt-5">
+
+                        <div class="card text-white bg-primary">
+                       <div class="card-header text-center"><img src="<?php echo base_url()?>/public/img/logoumc2.png" height="200" width="300 "img fluid"  alt="Imagen login"><h2>REGISTRO UMC</h2></div>
+    
+                       <div class="card-body">                                 
+                <form id= "form-register" method="post" action="">
+                        <div class="mb-3">
+                            <label for="email">Ingresa tu correo electronico:</label>
+                            <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="ejemplo@gmail.com" required ">
+                            
+                        </div>
+                        <div class="mb-3">
+                            <label for="password1" class="form-label">Contraseña :</label>
+                            <input type="password" minlength="8" maxlength="25" class="form-control" id="password1" name="password" placeholder="Contraseña" required ">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password2" class="form-label">Repite tu Contraseña :</label>
+                            <input type="password" minlength="8" maxlength="25" class="form-control" id="password2" name="password2" placeholder="Contraseña" required ">
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Guardar sesión</label>
+                        </div>
+                        <button type="submit" class="btn btn-dark">Registrarse</button>
+                        <a href="<?php echo base_url()?>/login" class="btn btn-dark">Ingresar</button>
+
+                    </form>
+                        
+                </div>        
+            </div>
+         </div>
+
+
+
+         <script src="<?php echo base_url()?>/public/js/jquery.min.js"></script>
+         <script src="<?php echo base_url()?>/public/js/bootstrapjs/bootstrap.bundle.min.js"></script>
+        <script src="<?php echo base_url()?>/public/js/bootstrapjs/bootstrap.min.js"></script>
+        <script src="<?php echo base_url()?>/public/js/popper.min.js" ></script>
+        <script src="<?php echo base_url()?>/public/js/jquery.validate.min.js"></script>
+        <script src="<?php echo base_url()?>/public/js/register.js"></script>
+
+</body>
+</html>
+
+
+
+/////////////////////////////FIN////////////////////////////
+
+
+
+
+
+
+

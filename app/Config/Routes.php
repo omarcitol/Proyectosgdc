@@ -12,3 +12,5 @@ $routes->get('/contacto', 'iniciocontrolador::contacto');
 $routes->get('/login', 'login::index');
 $routes->get('/register', 'register::index');
 $routes->post('/register', 'register::guardar');
+$routes->get('/alumnos', 'alumnos::index');
+$routes->get('/profesor', 'profesor::index');
