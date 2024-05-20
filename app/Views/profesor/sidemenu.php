@@ -67,14 +67,14 @@
     <div class="container-fluid p-0 d-flex h-100">
         <div id="bdSidebar" class="d-flex flex-column flex-shrink-0 p-3 bg-success text-white offcanvas-md offcanvas-start" style="width: 280px;">
             <a href="#" class="navbar-brand">
-                <h5><i class="fa-solid fa-bomb me-2" style="font-size: 28px;"></i>Bienvenido Alumno</h5>
+                <h5><i class="fa-solid fa-bomb me-2" style="font-size: 28px;"></i> Alumno</h5>
             </a>
             <hr>
             <ul class="mynav nav nav-pills flex-column mb-auto">
                 <li class="nav-item mb-1">
                     <a href="#" class="active">
                         <i class="fa-solid fa-wave-square"></i>
-                        Panel de control
+                        Overview
                     </a>
                 </li>
                 <li class="nav-item mb-1">
@@ -135,6 +135,20 @@
                     </ol>
                 </nav>
                 <div class="d-flex justify-content-between">
-                    <h5>Informacion</h5>
+                    <h5>Orders</h5>
                     <button class="btn btn-sm btn-light"><i class="fa-solid fa-download"></i>Descargar notas</button>
                 </div>
+                <hr>
+                <div class="row">
+                    <div class="col">
+                        <p>Contenido</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        
+    </div>
+</body>
+</html>
