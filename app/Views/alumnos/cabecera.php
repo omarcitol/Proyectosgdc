@@ -15,9 +15,16 @@
 </head>
 <body>
     
-<style>html,body{
+<style>
+
+html,body   {
+    margin: 0;
     height: 100%;
     font-family: 'Ubuntu', sans-serif;
+    position: relative;
+    padding-bottom: 3em;
+    min-height: 100vh;
+
 }
 
 .bg-success {
@@ -58,9 +65,19 @@
     font-size: 14px;
     padding: 0px 8px;
     border-radius: 2px;
-}
+ }
+    .piepagina {
+        background-color: rgba(26 18 76);
+        padding: 1em 0;
+        position: absolute;
+        bottom: 0;
+        text-align: center;
+        color: #fff;
+        width: 100%;
+        
+    }
 
- 
+
 
 </style>
 
@@ -72,46 +89,44 @@
             <hr>
             <ul class="mynav nav nav-pills flex-column mb-auto">
                 <li class="nav-item mb-1">
-                    <a href="#" class="active">
+                    <a href="index" class="active">
                         <i class="fa-solid fa-wave-square"></i>
                         Panel de control
                     </a>
                 </li>
                 <li class="nav-item mb-1">
-                    <a href="#" class="">
+                    <a href="notificaciones" class="">
                         <i class="fa-solid fa-bell"></i>
-                        Notifications
+                        Notificaciones
                         <span class="notification-badge">5</span>
                     </a>
                 </li>
                 <li class="nav-item mb-1">
-                    <a href="#" class="">
+                    <a href="consultarnotas" class="">
                         <i class="fa-solid fa-chart-simple"></i>
                         Consultar Notas
                     </a>
                 </li>
                 <li class="nav-item mb-1">
-                    <a href="#" class="">
-                        <i class="fa-solid fa-star"></i>
-                        Configuración
-                    </a>
-                </li>
-                <li class="nav-item mb-1">
-                    <a href="#" class="">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                        Pensums
-                    </a>
-                </li>
-                <li class="nav-item mb-1">
-                    <a href="#" class="">
+                    <a href="configuracion" class="">
                         <i class="fa-solid fa-user"></i>
-                        Notas
+                        Configuraciones
+                    </a>
+                </li>
+                
+                <li class="nav-item mb-1">
+                    <a href="cerrarsesion" class="">
+                    <i class="fa-sharp fa-solid fa-door-open"></i>
+                        Cerrar Sesión
+                    </a>
+                </li>
+
                     </a>
                 </li>
             </ul>
             <hr>
             <div class="d-flex">
-                <img src="public/img/logoumc2.png" class="img-fluid rounded me-2" width="50px" alt="">
+                <img src="public/img/logoumc2.png" class="img-fluid rounded me-2" width="40px" alt="">
                 <span>
                     <h6 class="mt-1 mb-0">Nombre Usuario</h6>
                     <small>correo ejemplo: johndoe@remotedev</small>
@@ -136,5 +151,5 @@
                 </nav>
                 <div class="d-flex justify-content-between">
                     <h5>Informacion</h5>
-                    <button class="btn btn-sm btn-light"><i class="fa-solid fa-download"></i>Descargar notas</button>
+                    <button class="btn btn-sm btn-light"><i class="fa-solid fa-download"></i>Volver a panel de control</button>
                 </div>

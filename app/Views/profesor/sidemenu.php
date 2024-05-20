@@ -67,7 +67,7 @@
     <div class="container-fluid p-0 d-flex h-100">
         <div id="bdSidebar" class="d-flex flex-column flex-shrink-0 p-3 bg-success text-white offcanvas-md offcanvas-start" style="width: 280px;">
             <a href="#" class="navbar-brand">
-                <h5><i class="fa-solid fa-bomb me-2" style="font-size: 28px;"></i> Alumno</h5>
+                <h5><i class="fa-solid fa-bomb me-2" style="font-size: 28px;"></i> Alumnos</h5>
             </a>
             <hr>
             <ul class="mynav nav nav-pills flex-column mb-auto">

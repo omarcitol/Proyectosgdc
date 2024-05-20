@@ -12,21 +12,34 @@ class Alumnos extends BaseController
 
 		 return $vistas; 
 	}
+	
+	public function notificaciones()
+	{
+	   $vistas =    
+					view('alumnos/cabecera').
+					view('alumnos/notificaciones').
+					view('alumnos/pie');
+
+				return $vistas;
+	}
 
 	public function consultarnotas() 
 	{
-	   $vistas =    view('alumnos/consultarnotas').
+	   $vistas =   
 					view('alumnos/cabecera').
+					view('alumnos/consultarnotas').
 					view('alumnos/pie');
 
 		 return $vistas; 
 	}
-	
-	public function prueba2()
-	{
-	   $vistas =    view('alumnos/prueba2').
 
+	public function Configuracion() 
+	{
+	   $vistas =   
 					view('alumnos/cabecera').
+					view('alumnos/configuracion').
 					view('alumnos/pie');
+
+		 return $vistas; 
 	}
  }
