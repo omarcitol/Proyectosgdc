@@ -12,6 +12,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            background-color: #87CEEB;
         }
         .card {
             max-width: 800px; /* Ajusta el ancho máximo de la tarjeta según tus necesidades */

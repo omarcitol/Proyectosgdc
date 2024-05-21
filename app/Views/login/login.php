@@ -13,6 +13,14 @@
 </head>
 <body class="m-0 vh-100 row justify-content-center align-item-center">
 
+<style>
+
+body{ 
+    background-color: #87CEEB;
+}
+
+</style>
+
             
 
             <div class="row">
