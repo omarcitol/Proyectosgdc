@@ -24,7 +24,7 @@ body{
             
 
             <div class="row">
-                <div class="col-xxl-12 col-lg-12 col-md-12 col-sm-12 pt-5">
+                <div class="col-xxl-12 col-lg-12 col-md-8 col-sm-12 pt-5">
 
                         <div class="card text-white bg-primary">
                         

@@ -13,7 +13,11 @@ class Login extends BaseController
     public function index(): string
     {
 
-        return view('login/login');
+        $vistas=    
+                    view('login/login');
+                    
+
+                    return $vistas;
     }
  
 }

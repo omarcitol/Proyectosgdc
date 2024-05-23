@@ -16,10 +16,8 @@ class iniciocontrolador extends BaseController
 
 	public function Informacion(){
 
-		$vistas = view('Informacion/menu').
-				  view('Informacion/cabecera'). 
+		$vistas = view('Informacion/cabecera'). 
 				  view('Informacion/inicio'). 
-				  view('Informacion/contenido'). 
 				  view('Informacion/pie'); 
 
 		 return $vistas;
@@ -27,10 +25,8 @@ class iniciocontrolador extends BaseController
 
 	public function contacto(){
 
-		$vistas = view('contacto/menu').
-			 	  view('contacto/cabecera'). 
+		$vistas = view('contacto/cabecera'). 
 			      view('contacto/inicio'). 
-				  view('contacto/contenido'). 
 				  view('contacto/pie'); 
 
 	 return $vistas;

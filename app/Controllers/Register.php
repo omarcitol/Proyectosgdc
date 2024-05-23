@@ -13,8 +13,9 @@ class Register extends BaseController
     public function index(): string
  
  { 
-    $vistas =  view('login/register');
-
+    $vistas =  
+               view('login/register');
+               
     return $vistas;
 
      }
