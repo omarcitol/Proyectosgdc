@@ -37,7 +37,7 @@ html,body   {
 
     .bg-success {
     --bs-bg-opacity: 1;
-    background-color: rgb(25 47 135) !important;
+    background-color: #2c5282;
     margin-bottom: 24px;
 }
 
