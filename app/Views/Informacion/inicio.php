@@ -11,7 +11,7 @@
   
 
     <div class="instrucciones">
-      <h2>Instrucciones para acceder al sistema de gestión de calificaciones:</h2>
+      <h2>Instrucciones para Aacceder al sistema de gestión de calificaciones:</h2>
       <ol>
         <li>Ingresa al sitio web de la Universidad Experimental Marítima del Caribe.</li>
         <li>Busca el apartado de "Consulta de notas" o "Calificaciones".</li>
