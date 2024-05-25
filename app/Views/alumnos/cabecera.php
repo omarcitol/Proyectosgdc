@@ -36,7 +36,7 @@ html,body   {
 
     .bg-success {
     --bs-bg-opacity: 1;
-    background-color: rgb(25 47 135) !important;
+    background-color: #001F3F;
     margin-bottom: 24px;
 }
 
@@ -45,6 +45,21 @@ html,body   {
 }
 
     .mynav li a {
+    color: #fff;
+
+}
+
+.bg-success {
+    --bs-bg-opacity: 1;
+    background-color: #001F3F !important;
+}
+
+.mynav{
+    color: #fff;
+}
+
+.mynav li a {
+
     color: #fff;
     text-decoration: none;
     width: 100%;

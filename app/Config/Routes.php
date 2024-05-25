@@ -36,6 +36,7 @@ $routes->get('/notificaciones2', 'profesor::notificaciones2');
 $routes->get('/cerrarsesion2', 'profesor::cerrarsesion2');
 $routes->get('/sidemenu', 'profesor::sidemenu');
 
+
 $routes->get('/admin', 'admin::index3');
 $routes->get('/index3', 'admin::index3');
 $routes->get('/configuracion3', 'admin::configuracion3');
@@ -43,4 +44,5 @@ $routes->get('/alumnos2', 'admin::alumnos2');
 $routes->get('/profesores2', 'admin::profesores2');
 $routes->get('/notificaciones3', 'admin::notificaciones3');
 $routes->get('/cerrarsesion3', 'admin::cerrarsesion3');
+
 

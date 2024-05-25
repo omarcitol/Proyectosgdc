@@ -101,6 +101,7 @@
 
 h1 {
   color: #333;
+
   padding: 0px;
   margin-bottom: 0px; /* Margen inferior */
   font-weight: bold; /* Fuente en negrita */
@@ -138,6 +139,26 @@ h2 {
   margin-bottom: 0px; /* Margen inferior */
   font-weight: bold; /* Fuente en negrita */
   font-size: 18px;
+
+  margin-bottom: 15px; /* Margen inferior */
+  font-weight: bold; /* Fuente en negrita */
+}
+
+p {
+  margin-bottom: 10px; /* Margen inferior */
+  padding-left: 20px; /* Sangría de 20px */
+}
+
+.instrucciones {
+  padding: 10px;
+  margin-top: 10px; /* Margen superior */
+  background-color: #f9f9f9;
+}
+
+h2 {
+  margin-bottom: 10px; /* Margen inferior */
+  font-weight: bold; /* Fuente en negrita */
+
 }
 
 ol {

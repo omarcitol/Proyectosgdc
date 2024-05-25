@@ -1,3 +1,8 @@
+
 Para que funcione el register y el login tienen que crear una base de datos como la de la foto, luego tiene que ir a apartado app del proyecto y colocarle en el nombre de base de dato auth.
+
+
+Para que funcione el register y el login tienen que crear una base de datos como la de la foto, luego tiene que ir a apartado app del proyecto y colocarle en el nombre de base de dato auth.
+
 
 Despues ir a env y ponerlo como la segunda foto.

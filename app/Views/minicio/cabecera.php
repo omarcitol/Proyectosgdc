@@ -23,7 +23,11 @@
         body {
             background-color: #87CEEB;
             font-family: 'Montserrat', sans-serif;
+
             font-size: 18px;
+
+            font-size: 16px;
+
             margin: 0;
             padding: 0;
             position: relative;

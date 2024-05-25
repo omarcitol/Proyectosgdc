@@ -5,7 +5,9 @@
 
 <div>
 
+
 <p>&copy; 2024 Sistema de Gestión de Calificaciones de la universidad maritima del caribe</p>
+
     
 </div>
 

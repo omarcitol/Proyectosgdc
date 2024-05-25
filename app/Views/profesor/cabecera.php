@@ -24,6 +24,7 @@ html,body   {
     position: relative;
     padding-bottom: 3em;
     min-height: 100vh;
+
     margin-bottom: 24px;
 
 }
@@ -45,6 +46,21 @@ html,body   {
 }
 
     .mynav li a {
+        color: #fff;
+    
+    }
+
+.bg-success {
+    --bs-bg-opacity: 1;
+    background-color: rgb(25 47 135) !important;
+}
+
+.mynav{
+    color: #fff;
+}
+
+.mynav li a {
+
     color: #fff;
     text-decoration: none;
     width: 100%;
@@ -84,6 +100,7 @@ html,body   {
         width: 100%;
         
     }
+
 </style>
 
     <div class="container-fluid p-0 d-flex h-100">
