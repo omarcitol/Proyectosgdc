@@ -1,0 +1,710 @@
+borrador register donde salen los required
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse</title>
+
+
+    <link href="<?php echo base_url()?>/public/css/bootstrapcss/bootstrap.min.css" rel="stylesheet">
+
+
+</head>
+<body class="m-0 vh-100 row justify-content-center align-item-center">
+
+            
+
+            <div class="row">
+                <div class="col-xxl-12 col-lg-12 col-md-12 col-sm-12 pt-5">
+
+                        <div class="card text-white bg-primary">
+                       <div class="card-header text-center"><img src="<?php echo base_url()?>/public/img/logoumc2.png" height="200" width="300 "img fluid"  alt="Imagen login"><h2>REGISTRO UMC</h2></div>
+    
+                       <div class="card-body">                                 
+                <form id= "form-register" method="post" action="">
+                        <div class="mb-3">
+                            <label for="email">Ingresa tu correo electronico:</label>
+                            <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="ejemplo@gmail.com" required aria-required="requiere gmail" oninvalid="this.setCustomValidity('Porfavor introduzca su gmail')" oninput="setCustomValidity('')">
+                            <small class="form-text text-white">Ingresa tu correo porfavor.</small>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password1" class="form-label">Contraseña :</label>
+                            <input type="password" minlength="8" maxlength="25" class="form-control" id="password1" name="password" placeholder="Contraseña" required aria-required="requiere contraseña" oninvalid="this.setCustomValidity('Porfavor introduzca su contraseña (mínimo 8 carácteres)')" oninput="setCustomValidity('')">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password2" class="form-label">Repite tu Contraseña :</label>
+                            <input type="password" minlength="8" maxlength="25" class="form-control" id="password2" name="password2" placeholder="Contraseña" required aria-required="requiere contraseña" oninvalid="this.setCustomValidity('Porfavor repita su contraseña, (mínimo 8 carácteres)')" oninput="setCustomValidity('')">
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Guardar sesión</label>
+                        </div>
+                        <button type="submit" class="btn btn-dark">Registrarse</button>
+                        <a href="<?php echo base_url()?>/login" class="btn btn-dark">Ingresar</button>
+
+                    </form>
+                        
+                </div>        
+            </div>
+         </div>
+
+
+
+         <script src="<?php echo base_url()?>/public/js/jquery.min.js"></script>
+         <script src="<?php echo base_url()?>/public/js/bootstrapjs/bootstrap.bundle.min.js"></script>
+        <script src="<?php echo base_url()?>/public/js/bootstrapjs/bootstrap.min.js"></script>
+        <script src="<?php echo base_url()?>/public/js/popper.min.js" ></script>
+        <script src="<?php echo base_url()?>/public/js/jquery.validate.min.js"></script>
+        <script src="<?php echo base_url()?>/public/js/register.js"></script>
+
+</body>
+</html>
+
+
+///////////////////////////fin//////////////////////////////////////////////////
+
+
+
+Validation >>
+
+$(document).ready(function () {
+
+//inicio de registrar usuario
+
+$(".form-register").click(function () {
+    validator();
+});
+
+var validator = function () {
+
+    $("#form-register").validate({
+
+        rules: {
+            "username": {
+                required: true,
+                minlength: 8,
+                maxlength: 25,
+            },
+
+            "email": {
+                required: true,
+                minlength: 5,
+            },
+
+            "password": {
+                required: true,
+                minlength: 7,
+                maxlength: 25,
+            },
+
+            "password2": {
+                required: true,
+                equalTo: "#password",
+            }
+        },
+
+        messages: {
+
+            "email": {
+                required: "<b style='color:#F93810'>Por favor ingresa un correo electrónico válido.</b>",
+            },
+
+            "password": {
+                required: "<b style='color:#5A6268'>Por favor ingresa una contraseña válida.</b>",
+                minlength: "<b style='color:#5A6268'>Debe tener mínimo 8 caracteres.</b>",
+                maxlength: "<b style='color:#5A6268'>Máximo 25 caracteres.</b>",
+            },
+
+            "password2": {
+                required: "<b style='color:#5A6268'>Por favor repita su contraseña.</b>",
+                minlength: "<b style='color:#5A6268'>Debe tener mínimo 8 caracteres.</b>",
+                equalTo: "<b style='color:#5A6268'>Las contraseñas no son iguales.</b>",
+            }
+        },
+
+        ignore: [],
+        errorClass: "invalid-feedback animated fadeInUp",
+        errorElement: "div",
+        errorPlacement: function (error, element) {
+            $(element).closest(".mb-3").append(error);
+        },
+        highlight: function (element) {
+            $(element).closest(".mb-3").removeClass("is-invalid").addClass("is-invalid");
+        },
+        success: function (error) {
+            $(error).closest(".mb-3").removeClass("is-invalid");
+            $(error).remove();
+        },
+        submitHandler: function (form, event) {
+
+            event.preventDefault();
+            var formData = new FormData($("#form-register")[0]);
+
+            $.ajax({
+                // url : base_url + '/crear cuenta',
+                // type : 'POST',
+                // data : formData,
+                // dataType : 'JSON',
+                // cache : false,
+                // contentType : false,
+                // processData : false,
+                // beforeSend : function(data) {
+                //     $('#page-loader').fadeIn('fast');
+                // },
+
+                // success : function(data) {
+                //     $('#page-loader').fadeOut('fast');
+                // },
+
+            });
+            //fin ajax.
+        }
+
+    });
+};
+
+});
+
+
+//////////////////////FORMULARIO REGISTRO ORIGINAL/////////////////////
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse</title>
+
+
+    <link href="<?php echo base_url()?>/public/css/bootstrapcss/bootstrap.min.css" rel="stylesheet">
+
+
+</head>
+<body class="m-0 vh-100 row justify-content-center align-item-center">
+
+            
+
+            <div class="row">
+                <div class="col-xxl-12 col-lg-12 col-md-12 col-sm-12 pt-5">
+
+                        <div class="card text-white bg-primary">
+                       <div class="card-header text-center"><img src="<?php echo base_url()?>/public/img/logoumc2.png" height="200" width="300 "img fluid"  alt="Imagen login"><h2>REGISTRO UMC</h2></div>
+    
+                       <div class="card-body">                                 
+                <form id= "form-register" method="post" action="">
+                        <div class="mb-3">
+                            <label for="email">Ingresa tu correo electronico:</label>
+                            <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="ejemplo@gmail.com" required ">
+                            
+                        </div>
+                        <div class="mb-3">
+                            <label for="password1" class="form-label">Contraseña :</label>
+                            <input type="password" minlength="8" maxlength="25" class="form-control" id="password1" name="password" placeholder="Contraseña" required ">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password2" class="form-label">Repite tu Contraseña :</label>
+                            <input type="password" minlength="8" maxlength="25" class="form-control" id="password2" name="password2" placeholder="Contraseña" required ">
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Guardar sesión</label>
+                        </div>
+                        <button type="submit" class="btn btn-dark">Registrarse</button>
+                        <a href="<?php echo base_url()?>/login" class="btn btn-dark">Ingresar</button>
+
+                    </form>
+                        
+                </div>        
+            </div>
+         </div>
+
+
+
+         <script src="<?php echo base_url()?>/public/js/jquery.min.js"></script>
+         <script src="<?php echo base_url()?>/public/js/bootstrapjs/bootstrap.bundle.min.js"></script>
+        <script src="<?php echo base_url()?>/public/js/bootstrapjs/bootstrap.min.js"></script>
+        <script src="<?php echo base_url()?>/public/js/popper.min.js" ></script>
+        <script src="<?php echo base_url()?>/public/js/jquery.validate.min.js"></script>
+        <script src="<?php echo base_url()?>/public/js/register.js"></script>
+
+</body>
+</html>
+
+
+
+/////////////////////////////FIN////////////////////////////
+
+Alumnos seccion 
+------
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Alumnos</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header {
+            background-color: #001f3f; /* Azul marino */
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .menu {
+            display: flex;
+            background-color: #333; /* Gris oscuro */
+            color: #fff;
+            padding: 10px;
+            justify-content: center;
+        }
+
+        .menu-item {
+            margin-right: 20px;
+        }
+
+        .menu-item a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #001f3f; /* Azul marino */
+            color: #fff;
+            padding: 20px;
+            flex: 1;
+        }
+
+        .content {
+            flex: 2;
+            padding: 20px;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: #f0f0f0; /* Color de fondo de la carta */
+            padding: 20px;
+            margin: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        .card h2 {
+            color: #001f3f; /* Azul marino */
+        }
+
+        .card p {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Bienvenido, Nombre del Alumno</h1>
+    </div>
+    <div class="menu">
+        <div class="menu-item">
+            <a href="#">Panel de control</a>
+        </div>
+        <div class="menu-item">
+            <a href="carrera">Carrera</a>
+        </div>
+        <div class="menu-item">
+            <a href="#">Ver Materias</a>
+        </div>
+        <div class="menu-item">
+            <a href="#">Consultar Notas</a>
+        </div>
+        <div class="menu-item">
+            <a href="#">Cerrar Sesión</a>
+        </div>
+    </div>
+    <div class="sidebar">
+        <!-- Contenido del sidebar -->
+    </div>
+    <div class="content">
+        <div class="card-container">
+            <div class="card">
+                <h2>Carta 1</h2>
+                <p>Contenido de la Carta 1</p>
+            </div>
+            <div class="card">
+                <h2>Carta 2</h2>
+                <p>Contenido de la Carta 2</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+////////////////////////FIn/////////////////////////////////////////////
+
+Alumnos contenido
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Alumnos</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header {
+            background-color: #001f3f; /* Azul marino */
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .menu {
+            display: flex;
+            background-color: #333; /* Gris oscuro */
+            color: #fff;
+            padding: 10px;
+            justify-content: center;
+        }
+
+        .menu-item {
+            margin-right: 20px;
+        }
+
+        .menu-item a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #001f3f; /* Azul marino */
+            color: #fff;
+            padding: 20px;
+            flex: 1;
+        }
+
+        .content {
+            flex: 2;
+            padding: 20px;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: #f0f0f0; /* Color de fondo de la carta */
+            padding: 20px;
+            margin: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        .card h2 {
+            color: #001f3f; /* Azul marino */
+        }
+
+        .card p {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Bienvenido, Nombre del Alumno</h1>
+    </div>
+    <div class="menu">
+        <div class="menu-item">
+            <a href="#">Panel de control</a>
+        </div>
+        <div class="menu-item">
+            <a href="consultarnotas">Consultar Notas</a>
+        </div>
+        <div class="menu-item">
+            <a href="#">Cerrar Sesión</a>
+        </div>
+    </div>
+    <div class="sidebar">
+        <h3>Información Personal:</h3>
+        <p>Nombre: Nombre del Alumno</p>
+        <p>ID: 123456</p>
+        <p>Dirección: Dirección del Alumno</p>
+        <h3>Calificaciones:</h3>
+        <p>Asignatura 1: 90</p>
+        <p>Asignatura 2: 85</p>
+        <p>Promedio General: 87.5</p>
+    </div>
+    
+        </div>
+    </div>
+    </head>
+    <body>
+
+
+MI cabecera original
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>HOLA UMC</title>
+  
+</head>
+  <body>
+
+
+  ///////SIDEBAR A MANO PURA///////////////
+
+  <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidemenu</title>
+</head>
+
+<link rel="stylesheet" href="styles.css">
+
+    
+    <style>
+        :root {
+            width: 300px;
+            padding: 10px;
+            background-color: darkslateblue;
+            --hovercolor: rgb(23,23,23);
+            --width-collapsed: 50px;
+        }
+
+        body {
+            background-color: #032c55;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            padding: 0;
+            margin: 0;
+            margin-left: var (withd-collapsed);
+
+        }
+
+        body-expanded {
+            margin-left: var(width);
+
+        }
+
+        #main-container {
+            color: white;
+
+        }
+
+        #sidemenu { 
+            background-color: var(--bg color);
+            color: white;
+            position: fixed;
+            height: 100%;
+            left: 0;
+            top: 0;
+        }
+
+       #sidemenu a {
+            color: white;
+            text-decoration: none;
+
+       } 
+
+       /* aqui empezamos la parte del header*/
+
+       #sidemenu #header {
+            box-sizing: border-box;
+            border-bottom: solid lpx var(--hovercolor);
+
+       }
+
+       #sidemenu #header #title {
+            box-sizing: border-box;
+            overflow: hidden;
+
+       }
+
+       #sidemenu #header #title, #sidemenu #header #menu-btn {
+        vertical-align: middle;
+
+       }
+
+       #sidemenu #header #menu-btn {
+        cursor: pointer;
+        padding: 10px;
+        width: var(width-collapsed);
+        box-sizing: border-box;
+
+       }
+
+       #sidemenu #header #menu-btn:hover{
+        background-color: var(--hovercolor);
+
+       }    
+
+       #sidemenu #header #menu-btn .btn-paneldecontrol {
+
+        background-color: white;
+        width: 100%;
+        height: 2px;
+        margin: 5px 0;
+
+       }
+
+       /*PROFILE O PERFIL*/
+
+       #sidemenu #profile {
+        border-bottom: solid lpx var(--hovercolor);
+        padding: var(--padding) 0;
+        text-align: center;
+       }
+
+       #sidemenu #profile #photo {
+        box-sizing: border-box;
+        padding: var(--padding);
+        margin: 0 auto;
+       }
+
+       #sidemenu #profile #photo img {
+        border-radius: 50%;
+        width: 60%;
+       }
+
+       #sidemenu #profile #photo, #sidemenu #profile #name {
+        font-size: 24px;
+        padding: var(--padding) 0;
+        overflow: hidden;
+
+       }
+
+        /*ITEM*/
+
+        #sidemenu #menu-items .item {
+            width: var(--width);
+
+        }
+
+        #sidemenu #menu-items .item .icon{
+            display: inline-block;
+
+        }
+
+        #sidemenu #menu-items .item .icon,
+        #sidemenu #menu-items .item .title{
+            font-size: 14px;
+            vertical-align: middle;
+            overflow: hidden;
+            display: inline-block;
+        }
+        
+        #sidemenu #menu-items .item a {
+            display: block;
+
+        }
+
+        #sidemenu #menu-items .item .icon{
+            box-sizing: border-box;
+            padding: var(--padding);
+            width: var(--width-collapsed);
+
+        }
+
+        #sidemenu #menu-items .item .icon img{
+            width: 100%;
+
+        }
+        #sidemenu #menu-items .item .title{
+            padding: var(--padding) 0;
+        }
+        #sidemenu #menu-items .item.separator {
+            height: 1px;
+            border-bottom: solid 1px var(--hovercolor);
+            margin: 15px 0;
+
+        }
+
+
+
+    </style>
+
+        <body>
+            
+            <div id="sidemenu" class="menu-collapsed">
+                <div id="header">
+
+                   <!-- Header -->
+
+                    <div id="title"><span>SGDC</span></div>
+                        <div id="menu-btn">
+                            <div class="btn-paneldecontrol"></div>
+                            <div class="btn-consultarnotas"></div>
+                            <div class="btn-cerrarsesion"></div>
+                       </div>
+
+                </div>
+
+                       <!-- Perfil -->
+                       <div id="profile">
+                        <div id="photo"><img src="public/img/logoumc2.png" alt=""></div>
+                       </div>
+
+                       <div id="name"><span>Omar Lozada</span></div>
+
+                        </div>
+                       <!-- items -->
+                        <div id="menu-items">
+                            <div class="item">
+                                <a href="">
+                                    <div class="icon"><img src="public/img/logoumc2.png" alt=""></div>
+                                    <div class="title"><span>UMC</span></div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="item separator">
+                            
+                        </div>
+
+            </div>
+        </body>
+</html>
